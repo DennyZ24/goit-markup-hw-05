@@ -5,6 +5,8 @@
   --bg-hero-color: #c4c4c4;
   --card-gap: 30px;
   --bg-color-foot: #2f303a;
+  --cube: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 250ms;
 }
 
 body {
@@ -105,6 +107,13 @@ nav {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--duration) var(--cube);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--brand-color);
 }
 
 .nav-link.link-now {
@@ -121,11 +130,6 @@ nav {
 
   border-radius: 2px;
   background-color: var(--brand-color);
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--brand-color);
 }
 
 .mail-and-tel {
@@ -149,6 +153,8 @@ nav {
   font-size: 14px;
   line-height: 1.2;
   color: var(--first-color);
+
+  transition: color var(--duration) var(--cube);
 }
 
 .link-mailtel:hover,
@@ -238,6 +244,8 @@ nav {
   height: 100%;
   top: 0;
   left: 0;
+  opacity: 1;
+  transition: opacity var(--duration) var(--cube);
 
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -247,13 +255,21 @@ nav {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   min-width: 528px;
   min-height: 581px;
+  opacity: 1;
+  transition: transform var(--duration) var(--cube),
+    opacity var(--duration) var(--cube);
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -434,6 +450,9 @@ nav {
   width: 44px;
   height: 44px;
 
+  transition: color var(--duration) var(--cube),
+    background-color var(--duration) var(--cube);
+
   color: var(--first-color);
   border-radius: 50%;
 }
@@ -465,6 +484,9 @@ nav {
   align-items: center;
   width: 170px;
   height: 90px;
+
+  transition: color var(--duration) var(--cube),
+    border-color var(--duration) var(--cube);
 
   border-radius: 4px;
   border: 1px solid #afb1b8;
@@ -510,6 +532,9 @@ nav {
   padding-left: 22px;
   padding-right: 22px;
 
+  transition: background-color var(--duration) var(--cube),
+    color var(--duration) var(--cube), box-shadow var(--duration) var(--cube);
+
   background-color: #f5f4fa;
   border-style: none;
   border-radius: 4px;
@@ -541,6 +566,8 @@ nav {
   flex-basis: calc(100% / 3 - var(--card-gap));
   margin-right: var(--card-gap);
   margin-bottom: var(--card-gap);
+
+  transition: box-shadow var(--duration) var(--cube);
 
   border: 1px solid #eeeeee;
 }
@@ -663,6 +690,8 @@ nav {
   align-items: center;
   width: 44px;
   height: 44px;
+
+  transition: background-color var(--duration) var(--cube);
 
   border-radius: 50%;
   color: #fff;
