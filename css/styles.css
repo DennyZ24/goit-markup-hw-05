@@ -96,6 +96,7 @@ nav {
 }
 
 .nav-link {
+  position: relative;
   font-weight: 500;
   color: var(--second-color);
   font-size: 14px;
@@ -104,6 +105,22 @@ nav {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.nav-link.link-now {
+  color: var(--brand-color);
+}
+
+.nav-link.link-now::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+  background-color: var(--brand-color);
 }
 
 .nav-link:hover,
@@ -159,10 +176,6 @@ nav {
   margin-bottom: 50px;
 }
 
-.nav-link.link-now {
-  color: var(--brand-color);
-}
-
 /* Герой */
 
 .hero {
@@ -201,17 +214,71 @@ nav {
   margin-bottom: 30px;
 }
 
-.hero-link {
+.hero-button {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
   padding: 10px 32px;
   border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 
   color: #ffffff;
   background-color: var(--brand-color);
 
   display: inline-block;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.modal-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.modal-icon {
+  fill: #000;
 }
 
 /* Преимущества */
@@ -415,10 +482,6 @@ nav {
 }
 
 /* ПОРТФОЛИО */
-
-.nav-link.link-now {
-  color: var(--brand-color);
-}
 
 /* Фильтры */
 .button-list {
