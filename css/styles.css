@@ -608,6 +608,42 @@ nav {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.stand {
+  position: relative;
+  overflow: hidden;
+}
+
+.stand-box {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform var(--duration) var(--cube);
+
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.projects-list .item:hover .stand-box {
+  transform: translateY(-100%);
+}
+
+.box-text {
+  margin: 0;
+  max-width: 322px;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  color: #ffffff;
+}
+
 .stand-text {
   padding-top: 20px;
   padding-right: 24px;
