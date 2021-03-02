@@ -359,7 +359,7 @@ nav {
   padding-bottom: 94px;
 }
 
-.img-list {
+.spec-list {
   display: flex;
   flex-wrap: wrap;
   width: 1200px;
@@ -368,9 +368,40 @@ nav {
   margin-right: calc(-1 * var(--card-gap));
 }
 
-.img-list .item {
+.spec-list .item {
   flex-basis: calc(100% / 3 - var(--card-gap));
   margin-right: var(--card-gap);
+}
+
+.spec-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 370px;
+  height: 70px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.spec-text {
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #fff;
 }
 
 /* Команда */
